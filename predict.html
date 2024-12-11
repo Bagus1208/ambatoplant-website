@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/output2.css" rel="stylesheet">
+    <title>Identifikasi Tanaman</title>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <header class="bg-white sticky top-0 z-50">
+        <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-5 lg:px-8">
+          <div class="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
+
+            <div class="flex flex-row gap-4">
+              <img 
+                src="assets/images/ambatoplant-removebg-preview.png"
+                alt=""
+                class="h-20 w-15 rounded-lg pl"
+              />
+
+              <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl content-center">AmbatoPlant</h1>
+    
+            </div>
+      
+            <div class="flex items-center gap-4 justify-items-end">
+              <button
+                class="inline-flex items-center justify-center gap-1.5 rounded border border-gray-200 bg-white px-5 py-3 text-gray-900 transition hover:text-gray-700 focus:outline-none focus:ring focus:ring-green-400"
+                type="button"
+                onclick="window.location.href='index.html#plant-list';"
+              >
+                <span class="text-sm font-medium"> Daftar Tanaman </span>
+              </button>
+      
+              <button
+                class="inline-block rounded bg-green-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-green-700 focus:outline-none focus:ring focus:ring-green-400"
+                type="button"
+              >
+                Identifikasi Tanaman
+              </button>
+            </div>
+          </div>
+        </div>
+    </header>
+    <!-- END NAVBAR -->
+
+    <!-- UPLOAD FILE -->
+    <div class="flex justify-center items-center h-96">
+      <div
+        class="w-[400px] h-[300px] flex justify-center items-center relative border-2 border-gray-300 border-dashed rounded-lg p-6 mx-auto"
+        id="dropzone"
+      >
+        <!-- Input file hanya di dalam area dropzone -->
+        <input
+          type="file"
+          class="absolute inset-0 w-full h-full opacity-0 z-10 cursor-pointer"
+          id="file-upload"
+        />
+        <div class="text-center pointer-events-none" id="uploadbox">
+          <img
+            class="mx-auto h-12 w-12"
+            src="https://www.svgrepo.com/show/357902/image-upload.svg"
+            alt="Upload Icon"
+          />
+          <h3 class="mt-2 text-sm font-medium text-gray-900">
+            <span>Drag and drop</span>
+            <span class="text-indigo-600"> or browse</span>
+            <span>to upload</span>
+          </h3>
+          <p class="mt-1 text-xs text-gray-500">
+            PNG or JPG up to 10MB
+          </p>
+        </div>
+        <img src="" class="mt-4 mx-auto max-h-40 hidden" id="preview" alt="" />
+      </div>
+    </div>
+    
+
+    <div class="flex items-center justify-center mb-16" id="predict-buttton">
+      <button
+        type="button"
+        class="w-96 flex items-center justify-center rounded-md border border-green-900 bg-green-700 px-5 py-3 text-sm font-medium uppercase tracking-widest text-white hover:bg-white hover:text-green-700"
+        onclick="document.getElementById('prediction-result').scrollIntoView({ behavior: 'smooth' });"
+      >
+        <h2>Prediksi</h2>
+      </button>
+    </div>
+    <!-- END UPLOAD FILE -->
+
+    <!-- PREDICTION RESULT -->
+    <div id="prediction-result" class="hidden grid text-center my-6">
+      <h2 class="text-xl font-semibold text-gray-800 mb-5">Hasil Prediksi</h2>
+      <img id="plant-image" src="" alt="plant" class="mx-auto h-auto w-[30%] mb-4 rounded"/>
+      <p id="predicted-species" class="text-lg text-green-700 font-bold mt-2"></p>
+      <p id="confidence" class="text-sm text-gray-700 mt-1"></p>
+    </div>
+    <!-- END PREDICTION RESULT -->
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-50">
+        <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
+          <div class="sm:flex sm:items-center sm:justify-between">
+            <div class="flex justify-center text-teal-600 sm:justify-start">
+              <div class="flex flex-row gap-4">
+                <img 
+                  src="assets/images/ambatoplant-removebg-preview.png"
+                  alt=""
+                  class="h-10 w-10 rounded-lg pl"
+                />
+  
+                <h1 class="text-2xl font-bold text-gray-900 sm:text-1xl content-center">AmbatoPlant</h1>
+      
+              </div>
+            </div>
+      
+            <p class="mt-4 text-center text-xs text-gray-500 lg:mt-0 lg:text-right">
+              Copyright &copy; 2024 AmbatoPlant.
+            </p>
+          </div>
+        </div>
+    </footer>
+      <!-- END FOTTER -->
+    <script src="predict.js"></script>
+</body>
+</html>
