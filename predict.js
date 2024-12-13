@@ -91,7 +91,7 @@ predictButton.addEventListener('click', async () => {
 
   try {
     // Kirim file ke endpoint
-    const response = await fetch('https://ml-api-122135389835.asia-southeast2.run.app/predict', {
+    const response = await fetch('https://ambatoplant-app-122135389835.asia-southeast2.run.app/predict', {
       method: 'POST',
       body: formData,
     });
